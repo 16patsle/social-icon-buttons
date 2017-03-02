@@ -1,0 +1,7 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "beautify.CSSfiles": ["css", "scss"],
+    "beautify.JSfiles": ["js", "json", "jsbeautifyrc", "jshintrc"],
+    "beautify.HTMLfiles": ["htm", "html", "php"]
+
+}

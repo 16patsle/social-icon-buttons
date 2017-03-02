@@ -52,6 +52,7 @@ function add_social_icons( $content ) {
 		<a href="https://plus.google.com/share?url=' . $urlCurrentPage . '" class="google-plus" target="_blank" title="Google+"><i class="social fa fa-google-plus" aria-hidden="true"></i></a>
 		<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . $urlCurrentPage . '&media=' . $urlPostThumb . '&description=' . $strPageTitle . '" class="pinterest" target="_blank" title="Pinterest"><i class="social fa fa-pinterest-p" aria-hidden="true"></i></a>
 		<a href="http://reddit.com/submit?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="reddit" target="_blank" title="Reddit"><i class="social fa fa-reddit-alien" aria-hidden="true"></i></a>
+		<a href="https://getpocket.com/save?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="pocket" target="_blank" title="Pocket"><i class="social fa fa-get-pocket" aria-hidden="true"></i></a>
 		<a href="mailto:?subject=' . $emailTitle . '&amp;body=' . $emailContent . '%20' . $urlCurrentPage  . '" class="email" target="_blank" title="Email"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
 		<a href="#" onclick="window.print()" class="print" target="_blank"><i class="social fa fa-print" aria-hidden="true" title="Print"></i></a>
 	</div>

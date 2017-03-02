@@ -105,13 +105,21 @@ body,
   background-color: #6cc655;
 }
 
+.social-icons .pocket {
+  background-color: #ef4056;
+}
+
+.social-icons .pocket i {
+  margin-left: -1px;
+}
+
 .social-icons .email {
   background-color: #669C41;
 }
 
 .social-icons .email i {
-  margin-left: -2px;
-  margin-top: -2px;
+  margin-left: -1px;
+  margin-top: -3px;
 }
 
 .social-icons .rss {

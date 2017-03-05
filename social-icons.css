@@ -7,7 +7,8 @@ body,
 }
 
 .social-icons {
-  max-width: 500px;
+  /*max-width: 500px;*/
+  max-width: 100%;
   font-size: 26px;
   display: -webkit-flex;
   display: flex;

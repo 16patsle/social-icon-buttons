@@ -1,141 +1,137 @@
-body,
-.social-icons,
-.social-icons a,
-.social-icons a i {
-  margin: 0;
-  padding: 0;
+body, .social-icons, .social-icons a, .social-icons a i {
+    margin: 0;
+    padding: 0;
 }
 
 .social-icons {
-  /*max-width: 500px;*/
-  max-width: 100%;
-  font-size: 26px;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  -webkit-justify-content: space-between;
-  justify-content: space-between;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -webkit-align-content: center;
-  align-content: center;
+    /*max-width: 500px;*/
+    max-width: 100%;
+    font-size: 26px;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-align-content: center;
+    align-content: center;
 }
 
-.social-icons a,
-.social-icons a:visited,
-.social-icons a:hover {
-  padding: 12px;
-  border-radius: 50%;
-  color: #fff !important;
-  width: 24px;
-  height: 24px;
-  /*display: inline-block;*/
-  margin: 5px;
-  text-decoration: none;
+.social-icons a, .social-icons a:visited, .social-icons a:hover {
+    padding: 12px;
+    border-radius: 50%;
+    color: #fff !important;
+    width: 24px;
+    height: 24px;
+    /*display: inline-block;*/
+    margin: 5px;
+    text-decoration: none;
 }
 
 .social-icons i {
-  vertical-align: text-top;
-  width: 24px;
-  text-align: center;
+    vertical-align: text-top;
+    width: 24px;
+    text-align: center;
+    opacity: 1;
 }
 
 
 /* Icon background */
 
 .social-icons .facebook {
-  background-color: #3b5999;
+    background-color: #3b5999;
 }
 
 .social-icons .twitter {
-  background-color: #55acee;
+    background-color: #55acee;
 }
 
 .social-icons .google-plus {
-  background-color: #dd4b39;
+    background-color: #dd4b39;
 }
 
 .social-icons .google-plus i {
-  margin-left: -4px;
+    margin-left: -4px;
 }
 
 .social-icons .pinterest {
-  background-color: #bd081c;
+    background-color: #bd081c;
 }
 
 .social-icons .reddit {
-  background-color: #ff5700;
+    background-color: #ff5700;
 }
 
 .social-icons .reddit i {
-  margin-left: -1px;
+    margin-left: -1px;
 }
 
 .social-icons .instagram {
-  background-color: #3f729b;
+    background-color: #3f729b;
 }
 
 .social-icons .youtube {
-  background-color: #cd201f;
+    background-color: #cd201f;
 }
 
 .social-icons .youtube i {
-  margin-left: -0.5px;
+    margin-left: -0.5px;
 }
 
 .social-icons .vine {
-  background-color: #00b489;
+    background-color: #00b489;
 }
 
 .social-icons .vimeo {
-  background-color: #1ab7ea;
+    background-color: #1ab7ea;
 }
 
 .social-icons .vimeo i {
-  margin-left: -0.5px;
+    margin-left: -0.5px;
 }
 
 .social-icons .skype {
-  background-color: #00AFF0;
+    background-color: #00AFF0;
 }
 
 .social-icons .feedly {
-  background-color: #6cc655;
+    background-color: #6cc655;
 }
 
 .social-icons .pocket {
-  background-color: #ef4056;
+    background-color: #ef4056;
 }
 
 .social-icons .pocket i {
-  margin-left: -1px;
+    margin-left: -1px;
 }
 
 .social-icons .telegram {
-  background-color: #0088cc;
+    background-color: #0088cc;
 }
 
 .social-icons .telegram i {
-  margin-left: -1px;
-  margin-top: -2.5px;
+    margin-left: -1px;
+    margin-top: -2.5px;
 }
 
 .social-icons .email {
-  background-color: #669C41;
+    background-color: #669C41;
 }
 
 .social-icons .email i {
-  margin-left: -1px;
-  margin-top: -3px;
+    margin-left: -1px;
+    margin-top: -3px;
 }
 
 .social-icons .rss {
-  background-color: #ff6600;
+    background-color: #ff6600;
 }
 
 .social-icons .print {
-  background-color: #62665E;
+    background-color: #62665E;
 }

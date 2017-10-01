@@ -5,6 +5,8 @@ Description: Social Icon Buttons multitek.no
 Version: 1.2
 Author: Patrick Sletvold
 Author URI: http://multitek.no
+Requires at least: 4.6
+Text Domain: social-icon-buttons
 */
 
 /*
@@ -49,15 +51,15 @@ function add_social_icons($content)
 
     $share_buttons = '
 	<div class="social-icons">
-		<a href="http://www.facebook.com/sharer.php?u=' . $urlCurrentPage . '" class="facebook" target="_blank" title="Facebook"><i class="social fa fa-facebook" aria-hidden="true"></i><span>Share on Facebook</span></a>
-		<a href="http://twitter.com/share?url=' . $urlCurrentPage . '&text=' . $shareText . '" class="twitter" target="_blank" title="Twitter"><i class="social fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span></a>
-		<a href="https://plus.google.com/share?url=' . $urlCurrentPage . '" class="google-plus" target="_blank" title="Google+"><i class="social fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span></a>
-		<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . $urlCurrentPage . '&media=' . $urlPostThumb . '&description=' . $strPageTitle . '" class="pinterest" target="_blank" title="Pinterest"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>Share on Pinterest</span></a>
-		<a href="http://reddit.com/submit?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="reddit" target="_blank" title="Reddit"><i class="social fa fa-reddit-alien" aria-hidden="true"></i><span>Share on Reddit</span></a>
-		<a href="https://getpocket.com/save?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="pocket" target="_blank" title="Pocket"><i class="social fa fa-get-pocket" aria-hidden="true"></i><span>Save to Pocket</span></a>
-		<a href="https://telegram.me/share/url?url=' . $urlCurrentPage  . '&amp;text=' . $shareText . '" class="telegram" target="_blank" title="Telegram"><i class="social fa fa-telegram" aria-hidden="true"></i><span>Share using Telegram</span></a>
-		<a href="mailto:?subject=' . $emailTitle . '&amp;body=' . $emailContent . '%20' . $urlCurrentPage  . '" class="email" target="_blank" title="Email"><i class="social fa fa-envelope" aria-hidden="true"></i><span>Share using email</span></a>
-		<a href="#" onclick="window.print()" class="print" target="_blank"><i class="social fa fa-print" aria-hidden="true" title="Print"></i><span>Print page</span></a>
+		<a href="http://www.facebook.com/sharer.php?u=' . $urlCurrentPage . '" class="facebook" target="_blank" title="Facebook"><i class="social fa fa-facebook" aria-hidden="true"></i><span>' . esc_html__('Share using Facebook', 'social-icon-buttons') . '</span></a>
+		<a href="http://twitter.com/share?url=' . $urlCurrentPage . '&text=' . $shareText . '" class="twitter" target="_blank" title="Twitter"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__('Share using Twitter', 'social-icon-buttons') . '</span></a>
+		<a href="https://plus.google.com/share?url=' . $urlCurrentPage . '" class="google-plus" target="_blank" title="Google+"><i class="social fa fa-google-plus" aria-hidden="true"></i><span>' . esc_html__('Share using Google+', 'social-icon-buttons') . '</span></a>
+		<a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . $urlCurrentPage . '&media=' . $urlPostThumb . '&description=' . $strPageTitle . '" class="pinterest" target="_blank" title="Pinterest"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . __('Share using Pinterest', 'social-icon-buttons') . '</span></a>
+		<a href="http://reddit.com/submit?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="reddit" target="_blank" title="Reddit"><i class="social fa fa-reddit-alien" aria-hidden="true"></i><span>' . esc_html__('Share using Reddit', 'social-icon-buttons') . '</span></a>
+		<a href="https://getpocket.com/save?url=' . $urlCurrentPage  . '&amp;title=' . $strPageTitle . '" class="pocket" target="_blank" title="Pocket"><i class="social fa fa-get-pocket" aria-hidden="true"></i><span>' . esc_html__('Save to Pocket', 'social-icon-buttons') . '</span></a>
+		<a href="https://telegram.me/share/url?url=' . $urlCurrentPage  . '&amp;text=' . $shareText . '" class="telegram" target="_blank" title="Telegram"><i class="social fa fa-telegram" aria-hidden="true"></i><span>' . esc_html__('Share using Telegram', 'social-icon-buttons') . '</span></a>
+		<a href="mailto:?subject=' . $emailTitle . '&amp;body=' . $emailContent . '%20' . $urlCurrentPage  . '" class="email" target="_blank" title="Email"><i class="social fa fa-envelope" aria-hidden="true"></i><span>' . esc_html__('Share using email', 'social-icon-buttons') . '</span></a>
+		<a href="#" onclick="window.print()" class="print" target="_blank"><i class="social fa fa-print" aria-hidden="true" title="Print"></i><span>' . esc_html__('Print page', 'social-icon-buttons') . '</span></a>
 	</div>
 	';
     $returnContent = $share_buttons . $content . $share_buttons;

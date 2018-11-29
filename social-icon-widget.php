@@ -33,37 +33,37 @@ echo '<div class="social-icons" style="max-width:100%;">';
 
     $facebook = $instance['facebook'];
     if (! empty($facebook)) {
-        echo '<a href="https://facebook.com/' . $facebook . '" class="facebook" target="_blank" title="' . esc_html__('Facebook', 'social-icon-buttons') . '"><i class="social fa fa-facebook" aria-hidden="true"></i><span>' . esc_html__('Facebook Page', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="https://facebook.com/' . $facebook . '" class="facebook" target="_blank" rel="noopener" title="' . esc_html__('Facebook', 'social-icon-buttons') . '"><i class="social fa fa-facebook" aria-hidden="true"></i><span>' . esc_html__('Facebook Page', 'social-icon-buttons') . '</span></a>';
     }
 
     $twitter = $instance['twitter'];
     if (! empty($twitter)) {
-        echo '<a href="https://twitter.com/' . $twitter . '" class="twitter" target="_blank" title="' . esc_html__('Twitter', 'social-icon-buttons') . '"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__('Twitter Profile', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="https://twitter.com/' . $twitter . '" class="twitter" target="_blank" rel="noopener" title="' . esc_html__('Twitter', 'social-icon-buttons') . '"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__('Twitter Profile', 'social-icon-buttons') . '</span></a>';
     }
 
     $googleplus = $instance['googleplus'];
     if (! empty($googleplus)) {
-        echo '<a href="https://plus.google.com/' . $googleplus . '" class="google-plus" target="_blank" title="' . esc_html__('Google+', 'social-icon-buttons') . '"><i class="social fa fa-google-plus" aria-hidden="true"></i><span>' . esc_html__('Google+ Profile', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="https://plus.google.com/' . $googleplus . '" class="google-plus" target="_blank" rel="noopener" title="' . esc_html__('Google+', 'social-icon-buttons') . '"><i class="social fa fa-google-plus" aria-hidden="true"></i><span>' . esc_html__('Google+ Profile', 'social-icon-buttons') . '</span></a>';
     }
 
     $pinterest = $instance['pinterest'];
     if (! empty($pinterest)) {
-        echo '<a href="https://pinterest.com/' . $pinterest . '" class="pinterest" target="_blank" title="' . esc_html__('Pinterest', 'social-icon-buttons') . '"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . esc_html__('Pinterest Profile', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="https://pinterest.com/' . $pinterest . '" class="pinterest" target="_blank" rel="noopener" title="' . esc_html__('Pinterest', 'social-icon-buttons') . '"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . esc_html__('Pinterest Profile', 'social-icon-buttons') . '</span></a>';
     }
 
     $feedly = $instance['feedly'];
     if (! empty($googleplus)) {
-        echo '<a href="' . $feedly . '" class="feedly" target="_blank" title="' . esc_html__('Feedly', 'social-icon-buttons') . '"><i class="social fa fa-rss" aria-hidden="true"></i><span>' . esc_html__('Feedly RSS Feed', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="' . $feedly . '" class="feedly" target="_blank" rel="noopener" title="' . esc_html__('Feedly', 'social-icon-buttons') . '"><i class="social fa fa-rss" aria-hidden="true"></i><span>' . esc_html__('Feedly RSS Feed', 'social-icon-buttons') . '</span></a>';
     }
 
     $email = $instance['email'];
     if (! empty($email)) {
-        echo '<a href="mailto:' . $email . '" class="email" target="_blank" title="' . esc_html__('Email', 'social-icon-buttons') . '"><i class="social fa fa-envelope" aria-hidden="true"></i><span>' . esc_html__('Send email', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="mailto:' . $email . '" class="email" target="_blank" rel="noopener" title="' . esc_html__('Email', 'social-icon-buttons') . '"><i class="social fa fa-envelope" aria-hidden="true"></i><span>' . esc_html__('Send email', 'social-icon-buttons') . '</span></a>';
     }
 
     $print = $instance['print'];
     if (! empty($print)) {
-        echo '<a href="#" onclick="window.print()" class="print" target="_blank" title="' . esc_html__('Print', 'social-icon-buttons') . '"><i class="social fa fa-print" aria-hidden="true" title="Print"></i><span>' . esc_html__('Print page', 'social-icon-buttons') . '</span></a>';
+        echo '<a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="' . esc_html__('Print', 'social-icon-buttons') . '"><i class="social fa fa-print" aria-hidden="true" title="Print"></i><span>' . esc_html__('Print page', 'social-icon-buttons') . '</span></a>';
     }
 
     echo '</div>';

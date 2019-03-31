@@ -41,11 +41,6 @@ echo '<div class="social-icons" style="max-width:100%;">';
         echo '<a href="https://twitter.com/' . $twitter . '" class="twitter" target="_blank" rel="noopener" title="' . esc_html__('Twitter', 'social-icon-buttons') . '"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__('Twitter Profile', 'social-icon-buttons') . '</span></a>';
     }
 
-    $googleplus = $instance['googleplus'];
-    if (! empty($googleplus)) {
-        echo '<a href="https://plus.google.com/' . $googleplus . '" class="google-plus" target="_blank" rel="noopener" title="' . esc_html__('Google+', 'social-icon-buttons') . '"><i class="social fa fa-google-plus" aria-hidden="true"></i><span>' . esc_html__('Google+ Profile', 'social-icon-buttons') . '</span></a>';
-    }
-
     $pinterest = $instance['pinterest'];
     if (! empty($pinterest)) {
         echo '<a href="https://pinterest.com/' . $pinterest . '" class="pinterest" target="_blank" rel="noopener" title="' . esc_html__('Pinterest', 'social-icon-buttons') . '"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . esc_html__('Pinterest Profile', 'social-icon-buttons') . '</span></a>';
@@ -74,7 +69,6 @@ echo '<div class="social-icons" style="max-width:100%;">';
     <div class="social-icons">
         <a href="#" class="facebook" target="_blank" title="Facebook"><i class="social fa fa-facebook" aria-hidden="true"></i></a>
         <a href="#" class="twitter" target="_blank" title="Twitter"><i class="social fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#" class="google-plus" target="_blank" title="Google+"><i class="social fa fa-google-plus" aria-hidden="true"></i></a>
         <a href="#" class="pinterest" target="_blank" title="Pinterest"><i class="social fa fa-pinterest-p" aria-hidden="true"></i></a>
         <a href="#" class="reddit" target="_blank" title="Reddit"><i class="social fa fa-reddit-alien" aria-hidden="true"></i></a>
         <a href="#" class="email" target="_blank" title="Email"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
@@ -104,12 +98,6 @@ public function form($instance)
         $twitter = $instance[ 'twitter' ];
     } else {
         $twitter = '';
-    }
-
-    if (isset($instance[ 'googleplus' ])) {
-        $googleplus = $instance[ 'googleplus' ];
-    } else {
-        $googleplus = '';
     }
 
     if (isset($instance[ 'pinterest' ])) {
@@ -155,12 +143,6 @@ public function form($instance)
 						type="text" value="<?php echo esc_attr($twitter); ?>" />
 	</p>
 	<p>
-		<label for="<?php echo $this->get_field_id('googleplus'); ?>"><?php _e('Google+:', 'social-icon-buttons'); ?></label>
-		<p>plus.google.com/</p>
-		<input class="widefat" id="<?php echo $this->get_field_id('googleplus'); ?>" name="<?php echo $this->get_field_name('googleplus'); ?>"
-						type="text" value="<?php echo esc_attr($googleplus); ?>" />
-	</p>
-	<p>
 		<label for="<?php echo $this->get_field_id('pinterest'); ?>"><?php _e('Pinterest:', 'social-icon-buttons'); ?></label>
 		<p>pinterest.com/</p>
 		<input class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" name="<?php echo $this->get_field_name('pinterest'); ?>"
@@ -192,7 +174,6 @@ public function update($new_instance, $old_instance)
 
     $instance['facebook'] = (! empty($new_instance['facebook'])) ? strip_tags($new_instance['facebook']) : '';
     $instance['twitter'] = (! empty($new_instance['twitter'])) ? strip_tags($new_instance['twitter']) : '';
-    $instance['googleplus'] = (! empty($new_instance['googleplus'])) ? strip_tags($new_instance['googleplus']) : '';
     $instance['pinterest'] = (! empty($new_instance['pinterest'])) ? strip_tags($new_instance['pinterest']) : '';
     $instance['feedly'] = (! empty($new_instance['feedly'])) ? strip_tags($new_instance['feedly']) : '';
     $instance['email'] = (! empty($new_instance['email'])) ? strip_tags($new_instance['email']) : '';

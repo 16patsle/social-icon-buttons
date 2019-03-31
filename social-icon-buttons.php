@@ -30,6 +30,13 @@ function add_social_icons($content)
         return $content;
     }
 
+    // TODO: Find a better solution.
+    if ( function_exists( 'is_amp_endpoint' ) ) {
+		if ( is_amp_endpoint() ) {
+			return $content;
+		}
+	}
+
     global $post;
 
     $urlCurrentPage = get_permalink($post->ID);

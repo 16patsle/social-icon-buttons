@@ -47,7 +47,7 @@ echo '<div class="social-icons" style="max-width:100%;">';
     }
 
     $feedly = $instance['feedly'];
-    if (! empty($googleplus)) {
+    if (! empty($feedly)) {
         echo '<a href="' . $feedly . '" class="feedly" target="_blank" rel="noopener" title="' . esc_html__('Feedly', 'social-icon-buttons') . '"><i class="social fa fa-rss" aria-hidden="true"></i><span>' . esc_html__('Feedly RSS Feed', 'social-icon-buttons') . '</span></a>';
     }
 

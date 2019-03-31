@@ -2,7 +2,7 @@
 /*
 Plugin Name: Social Icon Buttons Plugin
 Description: Social Icon Buttons multitek.no
-Version: 1.3.1
+Version: 1.3.2
 Author: Patrick Sletvold
 Author URI: http://multitek.no
 Requires at least: 4.6

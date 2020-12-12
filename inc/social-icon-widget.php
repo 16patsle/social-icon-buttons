@@ -197,7 +197,7 @@ class Social_Icon_Widget extends WP_Widget {
   }
 
   // Updating widget replacing old instances with new
-  public function update( $new_instance, $old_instance ): self {
+  public function update( $new_instance, $old_instance ): array {
     $instance = [];
     $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 

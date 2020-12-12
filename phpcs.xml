@@ -1,5 +1,9 @@
 <?xml version="1.0"?>
 <ruleset name="MyStandard">
- <description>My library.</description>
- <rule ref="NeutronRuleset"/>
+  <description>My library.</description>
+
+  <file>social-icon-buttons.php</file>
+  <file>inc</file>
+
+  <rule ref="NeutronRuleset"/>
 </ruleset>

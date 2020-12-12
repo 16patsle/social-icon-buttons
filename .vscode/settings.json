@@ -2,6 +2,11 @@
 {
     "beautify.CSSfiles": ["css", "scss"],
     "beautify.JSfiles": ["js", "json", "jsbeautifyrc", "jshintrc"],
-    "beautify.HTMLfiles": ["htm", "html", "php"]
+    "beautify.HTMLfiles": [
+        "htm",
+        "html",
+        "php"
+    ],
+    "php.suggest.basic": false
 
 }

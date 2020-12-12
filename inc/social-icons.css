@@ -7,17 +7,11 @@ body, .social-icons, .social-icons a, .social-icons a i {
   /*max-width: 500px;*/
   max-width: 100%;
   font-size: 26px;
-  display: -webkit-flex;
   display: flex;
-  -webkit-flex-direction: row;
   flex-direction: row;
-  -webkit-justify-content: space-between;
   justify-content: space-between;
-  -webkit-align-items: center;
   align-items: center;
-  -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  -webkit-align-content: center;
   align-content: center;
 }
 

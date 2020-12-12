@@ -151,7 +151,7 @@ function add_icon_stylesheet() {
 }
 add_action( 'wp_enqueue_scripts', 'add_icon_stylesheet' );
 
-function add_wp_head() {
+function add_icon_defs() {
   require_once plugin_dir_path( __FILE__ ) . '/inc/icons.php';
 }
-add_action( 'wp_head', 'add_wp_head' );
+add_action( 'wp_body_open', 'add_icon_defs' );

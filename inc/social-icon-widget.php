@@ -1,5 +1,7 @@
 <?php
 
+declare( strict_types=1 );
+
 // Creating the widget
 class Social_Icon_Widget extends WP_Widget {
   public function __construct() {
@@ -15,7 +17,7 @@ class Social_Icon_Widget extends WP_Widget {
 
   // Creating widget front-end
   // This is where the action happens
-  public function widget( $args, $instance ) {
+  public function widget( $args, $instance ): void {
     $title = apply_filters( 'widget_title', $instance['title'] );
 
     // before and after widget arguments are defined by themes
@@ -76,7 +78,7 @@ class Social_Icon_Widget extends WP_Widget {
   }
 
   // Widget Backend
-  public function form( $instance ) {
+  public function form( $instance ): void {
     if ( isset( $instance['title'] ) ) {
       $title = $instance['title'];
     } else {
@@ -163,7 +165,7 @@ class Social_Icon_Widget extends WP_Widget {
   }
 
   // Updating widget replacing old instances with new
-  public function update( $new_instance, $old_instance ) {
+  public function update( $new_instance, $old_instance ): self {
     $instance = [];
     $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? strip_tags( $new_instance['title'] ) : '';
 
@@ -180,7 +182,7 @@ class Social_Icon_Widget extends WP_Widget {
 } // Class wpb_widget ends here
 
 // Register and load the widget
-function social_icon_load_widget() {
+function social_icon_load_widget(): void {
   register_widget( 'Social_Icon_Widget' );
 }
 add_action( 'widgets_init', 'social_icon_load_widget' );

@@ -24,6 +24,7 @@ body, .social-icons, .social-icons a, .social-icons a i {
   /*display: inline-block;*/
   margin: 5px;
   text-decoration: none;
+  box-sizing: content-box;
 }
 
 .social-icons i {

@@ -99,7 +99,7 @@ function add_social_icons( $content ): string {
     'telegram' => [
       'url' => 'https://telegram.me/share/url?url=' . $url_current_page . '&amp;text=' . $share_text,
       'title' => esc_html__( 'Telegram', 'social-icon-buttons' ),
-      'icon' => 'fa-telegram',
+      'icon' => 'fa-telegram-plane',
       'text' => esc_html__( 'Share using Telegram', 'social-icon-buttons' ),
     ],
     'email' => [
@@ -116,14 +116,14 @@ function add_social_icons( $content ): string {
     foreach ( $social_media as $name => $social ) {
       ?>
         <a href="<?php echo $social['url']; ?>" class="<?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
-          <i class="social fa <?php echo $social['icon']; ?>" aria-hidden="true"></i>
+          <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon'] ?>"/></svg>
           <span><?php echo $social['text']; ?></span>
         </a>
         <?php
     }
     ?>
-    <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="Print">
-      <i class="social fa fa-print" aria-hidden="true" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>"></i>
+    <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
+      <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
       <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
     </a>
   </div>
@@ -150,3 +150,8 @@ function add_icon_stylesheet() {
   wp_enqueue_style( 'social-icon-buttons' );
 }
 add_action( 'wp_enqueue_scripts', 'add_icon_stylesheet' );
+
+function add_wp_head() {
+  require_once plugin_dir_path( __FILE__ ) . '/inc/icons.php';
+}
+add_action( 'wp_head', 'add_wp_head' );

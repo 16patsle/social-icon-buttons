@@ -73,7 +73,7 @@ class Social_Icon_Widget extends WP_Widget {
         if ( ! empty( $social['instance'] ) ) {
           ?>
             <a href="<?php echo $social['url'] . $social['instance']; ?>" class="<?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
-              <i class="social fa <?php echo $social['icon']; ?>" aria-hidden="true"></i>
+              <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon'] ?>"/></svg>
               <span><?php echo $social['text']; ?></span>
             </a>
           <?php
@@ -84,7 +84,7 @@ class Social_Icon_Widget extends WP_Widget {
         $print = $instance['print'];
         ?>
         <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
-          <i class="social fa fa-print" aria-hidden="true" title="Print"></i>
+          <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
           <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
         </a>
         <?php

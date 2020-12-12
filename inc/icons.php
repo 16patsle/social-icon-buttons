@@ -1,4 +1,4 @@
-<svg>
+<svg style="display: none;">
   <!-- Font Awesome Free 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) -->
   <!-- fa-envelope -->
   <symbol id="social-fa-envelope" viewBox="0 0 512 512">

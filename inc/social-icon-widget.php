@@ -18,7 +18,8 @@ class Social_Icon_Widget extends WP_Widget {
   // Creating widget front-end
   // This is where the action happens
   public function widget( $args, $instance ): void {
-    $title = apply_filters( 'widget_title', $instance['title'] );
+    $title = isset( $instance['title'] ) ? $instance['title'] : '';
+    $title = apply_filters( 'widget_title', $title );
 
     // before and after widget arguments are defined by themes
     echo $args['before_widget'];
@@ -29,35 +30,35 @@ class Social_Icon_Widget extends WP_Widget {
     $social_media = [
       'facebook' => [
         'url' => 'https://facebook.com/',
-        'instance' => $instance['facebook'],
+        'instance' => isset( $instance['facebook'] ) ? $instance['facebook'] : false,
         'title' => esc_html__( 'Facebook', 'social-icon-buttons' ),
         'icon' => 'fa-facebook',
         'text' => esc_html__( 'Facebook Page', 'social-icon-buttons' ),
       ],
       'twitter' => [
         'url' => 'https://twitter.com/',
-        'instance' => $instance['twitter'],
+        'instance' => isset( $instance['twitter'] ) ? $instance['twitter'] : false,
         'title' => esc_html__( 'Twitter', 'social-icon-buttons' ),
         'icon' => 'fa-twitter',
         'text' => esc_html__( 'Twitter Profile', 'social-icon-buttons' ),
       ],
       'pinterest' => [
         'url' => 'http://pinterest.com/',
-        'instance' => $instance['pinterest'],
+        'instance' => isset( $instance['pinterest'] ) ? $instance['pinterest'] : false,
         'title' => esc_html__( 'Pinterest', 'social-icon-buttons' ),
         'icon' => 'fa-pinterest-p',
         'text' => esc_html__( 'Pinterest Profile', 'social-icon-buttons' ),
       ],
       'feedly' => [
         'url' => '',
-        'instance' => $instance['feedly'],
+        'instance' => isset( $instance['feedly'] ) ? $instance['feedly'] : false,
         'title' => esc_html__( 'Feedly', 'social-icon-buttons' ),
         'icon' => 'fa-rss',
         'text' => esc_html__( 'Feedly RSS Feed', 'social-icon-buttons' ),
       ],
       'email' => [
         'url' => 'mailto:',
-        'instance' => $instance['email'],
+        'instance' => isset( $instance['email'] ) ? $instance['email'] : false,
         'title' => esc_html__( 'Email', 'social-icon-buttons' ),
         'icon' => 'fa-envelope',
         'text' => esc_html__( 'Send email', 'social-icon-buttons' ),
@@ -79,8 +80,8 @@ class Social_Icon_Widget extends WP_Widget {
         }
       }
 
-      $print = $instance['print'];
-      if ( ! empty( $print ) ) {
+      if ( isset( $instance['print'] ) && ! empty( $instance['print'] ) ) {
+        $print = $instance['print'];
         ?>
         <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
           <i class="social fa fa-print" aria-hidden="true" title="Print"></i>

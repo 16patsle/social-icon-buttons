@@ -62,21 +62,77 @@ function add_social_icons( $content ): string {
     $url_post_thumb = 'https://cdn.multitek.no/img/multitek-logo/logo_gjennomsiktig_facebook.png';
   }
 
-  $share_buttons = '
-	<div class="social-icons">
-		<a href="http://www.facebook.com/sharer.php?u=' . $url_current_page . '" class="facebook" target="_blank" rel="noopener" title="' . esc_html__( 'Facebook', 'social-icon-buttons' ) . '"><i class="social fa fa-facebook" aria-hidden="true"></i><span>' . esc_html__( 'Share using Facebook', 'social-icon-buttons' ) . '</span></a>
-		<a href="http://twitter.com/share?url=' . $url_current_page . '&text=' . $share_text . '" class="twitter" target="_blank" rel="noopener" title="' . esc_html__( 'Twitter', 'social-icon-buttons' ) . '"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__( 'Share using Twitter', 'social-icon-buttons' ) . '</span></a>
-    <a href="http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . $url_current_page . '&media=' . $url_post_thumb . '&description=' . $str_page_title
-   . '" class="pinterest" target="_blank" rel="noopener" title="' . esc_html__( 'Pinterest', 'social-icon-buttons' ) . '"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . __( 'Share using Pinterest', 'social-icon-buttons' ) . '</span></a>
-    <a href="http://reddit.com/submit?url=' . $url_current_page . '&amp;title=' . $str_page_title
-   . '" class="reddit" target="_blank" rel="noopener" title="' . esc_html__( 'Reddit', 'social-icon-buttons' ) . '"><i class="social fa fa-reddit-alien" aria-hidden="true"></i><span>' . esc_html__( 'Share using Reddit', 'social-icon-buttons' ) . '</span></a>
-    <a href="https://getpocket.com/save?url=' . $url_current_page . '&amp;title=' . $str_page_title
-   . '" class="pocket" target="_blank" rel="noopener" title="' . esc_html__( 'Pocket', 'social-icon-buttons' ) . '"><i class="social fa fa-get-pocket" aria-hidden="true"></i><span>' . esc_html__( 'Save to Pocket', 'social-icon-buttons' ) . '</span></a>
-		<a href="https://telegram.me/share/url?url=' . $url_current_page . '&amp;text=' . $share_text . '" class="telegram" target="_blank" title="' . esc_html__( 'Telegram', 'social-icon-buttons' ) . '"><i class="social fa fa-telegram" aria-hidden="true"></i><span>' . esc_html__( 'Share using Telegram', 'social-icon-buttons' ) . '</span></a>
-		<a href="mailto:?subject=' . $email_title . '&amp;body=' . $email_content . '%20' . $url_current_page . '" class="email" target="_blank" rel="noopener" title="' . esc_html__( 'Email', 'social-icon-buttons' ) . '"><i class="social fa fa-envelope" aria-hidden="true"></i><span>' . esc_html__( 'Share using email', 'social-icon-buttons' ) . '</span></a>
-		<a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="Print"><i class="social fa fa-print" aria-hidden="true" title="' . esc_html__( 'Print', 'social-icon-buttons' ) . '"></i><span>' . esc_html__( 'Print page', 'social-icon-buttons' ) . '</span></a>
-	</div>
-	';
+  // Enable output buffering
+  ob_start();
+
+  $social_media = [
+    'facebook' => [
+      'url' => 'http://www.facebook.com/sharer.php?u=' . $url_current_page,
+      'title' => esc_html__( 'Facebook', 'social-icon-buttons' ),
+      'icon' => 'fa-facebook',
+      'text' => esc_html__( 'Share using Facebook', 'social-icon-buttons' ),
+    ],
+    'twitter' => [
+      'url' => 'http://twitter.com/share?url=' . $url_current_page . '&text=' . $share_text,
+      'title' => esc_html__( 'Twitter', 'social-icon-buttons' ),
+      'icon' => 'fa-twitter',
+      'text' => esc_html__( 'Share using Twitter', 'social-icon-buttons' ),
+    ],
+    'pinterest' => [
+      'url' => 'http://pinterest.com/pin/create/bookmarklet/?is_video=false&url=' . $url_current_page . '&media=' . $url_post_thumb . '&description=' . $str_page_title,
+      'title' => esc_html__( 'Pinterest', 'social-icon-buttons' ),
+      'icon' => 'fa-pinterest-p',
+      'text' => esc_html__( 'Share using Pinterest', 'social-icon-buttons' ),
+    ],
+    'reddit' => [
+      'url' => 'http://reddit.com/submit?url=' . $url_current_page . '&amp;title=' . $str_page_title,
+      'title' => esc_html__( 'Reddit', 'social-icon-buttons' ),
+      'icon' => 'fa-reddit-alien',
+      'text' => esc_html__( 'Share using Reddit', 'social-icon-buttons' ),
+    ],
+    'pocket' => [
+      'url' => 'https://getpocket.com/save?url=' . $url_current_page . '&amp;title=' . $str_page_title,
+      'title' => esc_html__( 'Pocker', 'social-icon-buttons' ),
+      'icon' => 'fa-get-pocket',
+      'text' => esc_html__( 'Share using Pocket', 'social-icon-buttons' ),
+    ],
+    'telegram' => [
+      'url' => 'https://telegram.me/share/url?url=' . $url_current_page . '&amp;text=' . $share_text,
+      'title' => esc_html__( 'Telegram', 'social-icon-buttons' ),
+      'icon' => 'fa-telegram',
+      'text' => esc_html__( 'Share using Telegram', 'social-icon-buttons' ),
+    ],
+    'email' => [
+      'url' => 'mailto:?subject=' . $email_title . '&amp;body=' . $email_content . '%20' . $url_current_page,
+      'title' => esc_html__( 'Email', 'social-icon-buttons' ),
+      'icon' => 'fa-envelope',
+      'text' => esc_html__( 'Share using email', 'social-icon-buttons' ),
+    ],
+  ];
+
+  ?>
+  <div class="social-icons">
+    <?php
+    foreach ( $social_media as $name => $social ) {
+      ?>
+        <a href="<?php echo $social['url']; ?>" class="<?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
+          <i class="social fa <?php echo $social['icon']; ?>" aria-hidden="true"></i>
+          <span><?php echo $social['text']; ?></span>
+        </a>
+        <?php
+    }
+    ?>
+    <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="Print">
+      <i class="social fa fa-print" aria-hidden="true" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>"></i>
+      <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
+    </a>
+  </div>
+  <?php
+
+  // Get contents and clean buffer
+  $share_buttons = ob_get_contents();
+  ob_end_clean();
+
   $return_content = $share_buttons . $content . $share_buttons;
 
   return $return_content;

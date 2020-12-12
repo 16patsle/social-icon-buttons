@@ -32,7 +32,7 @@ class Social_Icon_Widget extends WP_Widget {
         'url' => 'https://facebook.com/',
         'instance' => isset( $instance['facebook'] ) ? $instance['facebook'] : false,
         'title' => esc_html__( 'Facebook', 'social-icon-buttons' ),
-        'icon' => 'fa-facebook',
+        'icon' => 'fa-facebook-f',
         'text' => esc_html__( 'Facebook Page', 'social-icon-buttons' ),
       ],
       'twitter' => [

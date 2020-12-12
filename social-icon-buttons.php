@@ -69,7 +69,7 @@ function add_social_icons( $content ): string {
     'facebook' => [
       'url' => 'http://www.facebook.com/sharer.php?u=' . $url_current_page,
       'title' => esc_html__( 'Facebook', 'social-icon-buttons' ),
-      'icon' => 'fa-facebook',
+      'icon' => 'fa-facebook-f',
       'text' => esc_html__( 'Share using Facebook', 'social-icon-buttons' ),
     ],
     'twitter' => [

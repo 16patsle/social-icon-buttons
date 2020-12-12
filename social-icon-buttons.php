@@ -15,7 +15,7 @@ Includes
 ========
 */
 
-include_once plugin_dir_path(__FILE__).'/social-icon-widget.php';
+include_once plugin_dir_path(__FILE__).'/inc/social-icon-widget.php';
 
 /*
 =======
@@ -82,7 +82,7 @@ Actions
 
 function add_icon_stylesheet()
 {
-    wp_register_style('social-icon-buttons', plugin_dir_url(__FILE__) . '/social-icons.css');
+    wp_register_style('social-icon-buttons', plugin_dir_url(__FILE__) . '/inc/social-icons.css');
     wp_enqueue_style('social-icon-buttons');
 }
 add_action('wp_enqueue_scripts', 'add_icon_stylesheet');

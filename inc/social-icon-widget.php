@@ -26,40 +26,71 @@ class Social_Icon_Widget extends WP_Widget {
       echo $args['before_title'] . $title . $args['after_title'];
     }
 
+    $social_media = [
+      'facebook' => [
+        'url' => 'https://facebook.com/',
+        'instance' => $instance['facebook'],
+        'title' => esc_html__( 'Facebook', 'social-icon-buttons' ),
+        'icon' => 'fa-facebook',
+        'text' => esc_html__( 'Facebook Page', 'social-icon-buttons' ),
+      ],
+      'twitter' => [
+        'url' => 'https://twitter.com/',
+        'instance' => $instance['twitter'],
+        'title' => esc_html__( 'Twitter', 'social-icon-buttons' ),
+        'icon' => 'fa-twitter',
+        'text' => esc_html__( 'Twitter Profile', 'social-icon-buttons' ),
+      ],
+      'pinterest' => [
+        'url' => 'http://pinterest.com/',
+        'instance' => $instance['pinterest'],
+        'title' => esc_html__( 'Pinterest', 'social-icon-buttons' ),
+        'icon' => 'fa-pinterest-p',
+        'text' => esc_html__( 'Pinterest Profile', 'social-icon-buttons' ),
+      ],
+      'feedly' => [
+        'url' => '',
+        'instance' => $instance['feedly'],
+        'title' => esc_html__( 'Feedly', 'social-icon-buttons' ),
+        'icon' => 'fa-rss',
+        'text' => esc_html__( 'Feedly RSS Feed', 'social-icon-buttons' ),
+      ],
+      'email' => [
+        'url' => 'mailto:',
+        'instance' => $instance['email'],
+        'title' => esc_html__( 'Email', 'social-icon-buttons' ),
+        'icon' => 'fa-envelope',
+        'text' => esc_html__( 'Send email', 'social-icon-buttons' ),
+      ],
+    ];
+
     // This is where you run the code and display the output
-    echo '<div class="social-icons" style="max-width:100%;">';
+    ?>
+    <div class="social-icons" style="max-width:100%;">
+      <?php
+      foreach ( $social_media as $name => $social ) {
+        if ( ! empty( $social['instance'] ) ) {
+          ?>
+            <a href="<?php echo $social['url'] . $social['instance']; ?>" class="<?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
+              <i class="social fa <?php echo $social['icon']; ?>" aria-hidden="true"></i>
+              <span><?php echo $social['text']; ?></span>
+            </a>
+          <?php
+        }
+      }
 
-    $facebook = $instance['facebook'];
-    if ( ! empty( $facebook ) ) {
-      echo '<a href="https://facebook.com/' . $facebook . '" class="facebook" target="_blank" rel="noopener" title="' . esc_html__( 'Facebook', 'social-icon-buttons' ) . '"><i class="social fa fa-facebook" aria-hidden="true"></i><span>' . esc_html__( 'Facebook Page', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    $twitter = $instance['twitter'];
-    if ( ! empty( $twitter ) ) {
-      echo '<a href="https://twitter.com/' . $twitter . '" class="twitter" target="_blank" rel="noopener" title="' . esc_html__( 'Twitter', 'social-icon-buttons' ) . '"><i class="social fa fa-twitter" aria-hidden="true"></i><span>' . esc_html__( 'Twitter Profile', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    $pinterest = $instance['pinterest'];
-    if ( ! empty( $pinterest ) ) {
-      echo '<a href="https://pinterest.com/' . $pinterest . '" class="pinterest" target="_blank" rel="noopener" title="' . esc_html__( 'Pinterest', 'social-icon-buttons' ) . '"><i class="social fa fa-pinterest-p" aria-hidden="true"></i><span>' . esc_html__( 'Pinterest Profile', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    $feedly = $instance['feedly'];
-    if ( ! empty( $feedly ) ) {
-      echo '<a href="' . $feedly . '" class="feedly" target="_blank" rel="noopener" title="' . esc_html__( 'Feedly', 'social-icon-buttons' ) . '"><i class="social fa fa-rss" aria-hidden="true"></i><span>' . esc_html__( 'Feedly RSS Feed', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    $email = $instance['email'];
-    if ( ! empty( $email ) ) {
-      echo '<a href="mailto:' . $email . '" class="email" target="_blank" rel="noopener" title="' . esc_html__( 'Email', 'social-icon-buttons' ) . '"><i class="social fa fa-envelope" aria-hidden="true"></i><span>' . esc_html__( 'Send email', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    $print = $instance['print'];
-    if ( ! empty( $print ) ) {
-      echo '<a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="' . esc_html__( 'Print', 'social-icon-buttons' ) . '"><i class="social fa fa-print" aria-hidden="true" title="Print"></i><span>' . esc_html__( 'Print page', 'social-icon-buttons' ) . '</span></a>';
-    }
-
-    echo '</div>';
+      $print = $instance['print'];
+      if ( ! empty( $print ) ) {
+        ?>
+        <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
+          <i class="social fa fa-print" aria-hidden="true" title="Print"></i>
+          <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
+        </a>
+        <?php
+      }
+      ?>
+    </div>
+    <?php
 
     echo $args['after_widget'];
     /*

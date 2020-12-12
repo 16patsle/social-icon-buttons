@@ -5,5 +5,20 @@
   <file>social-icon-buttons.php</file>
   <file>inc</file>
 
-  <rule ref="NeutronRuleset"/>
+  <rule ref="NeutronRuleset">
+    <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />
+    <exclude name="WordPress.WhiteSpace.PrecisionAlignment" />
+  </rule>
+  <rule ref="Generic.WhiteSpace.ScopeIndent">
+    <properties>
+        <property name="indent" value="2"/>
+        <property name="tabIndent" value="false"/>
+    </properties>
+  </rule>
+  <rule ref="Generic.WhiteSpace.DisallowTabIndent" />
+  <rule ref="PEAR.Functions.FunctionCallSignature">
+    <properties>
+      <property name="indent" value="2"/>
+    </properties>
+  </rule>
 </ruleset>

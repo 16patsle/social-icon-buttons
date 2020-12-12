@@ -1,12 +1,10 @@
-body, .social-icons, .social-icons a, .social-icons a i {
+body, .social-icons, .social-icons a, .social-icons a svg {
   margin: 0;
   padding: 0;
 }
 
 .social-icons {
-  /*max-width: 500px;*/
   max-width: 100%;
-  font-size: 26px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,20 +16,19 @@ body, .social-icons, .social-icons a, .social-icons a i {
 .social-icons a, .social-icons a:visited, .social-icons a:hover {
   padding: 12px;
   border-radius: 50%;
-  color: #fff !important;
   width: 24px;
   height: 24px;
-  /*display: inline-block;*/
   margin: 5px;
   text-decoration: none;
   box-sizing: content-box;
 }
 
-.social-icons i {
+.social-icons svg.social {
   vertical-align: text-top;
-  width: 24px;
-  text-align: center;
+  width: 100%;
+  height: 100%;
   opacity: 1;
+  fill: #fff;
 }
 
 .social-icons a span {
@@ -64,7 +61,7 @@ body, .social-icons, .social-icons a, .social-icons a i {
   background-color: #ff5700;
 }
 
-.social-icons .reddit i {
+.social-icons .reddit svg {
   margin-left: -1px;
 }
 
@@ -76,7 +73,7 @@ body, .social-icons, .social-icons a, .social-icons a i {
   background-color: #cd201f;
 }
 
-.social-icons .youtube i {
+.social-icons .youtube svg {
   margin-left: -0.5px;
 }
 
@@ -88,7 +85,7 @@ body, .social-icons, .social-icons a, .social-icons a i {
   background-color: #1ab7ea;
 }
 
-.social-icons .vimeo i {
+.social-icons .vimeo svg {
   margin-left: -0.5px;
 }
 
@@ -104,26 +101,21 @@ body, .social-icons, .social-icons a, .social-icons a i {
   background-color: #ef4056;
 }
 
-.social-icons .pocket i {
-  margin-left: -1px;
-}
-
 .social-icons .telegram {
   background-color: #0088cc;
 }
 
-.social-icons .telegram i {
+.social-icons .telegram svg {
   margin-left: -1px;
-  margin-top: -2.5px;
+  margin-top: -1px;
 }
 
 .social-icons .email {
   background-color: #669C41;
 }
 
-.social-icons .email i {
-  margin-left: -1px;
-  margin-top: -3px;
+.social-icons .email svg {
+  margin-top: -2px;
 }
 
 .social-icons .rss {

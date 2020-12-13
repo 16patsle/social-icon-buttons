@@ -14,6 +14,8 @@ declare( strict_types=1 );
 require_once plugin_dir_path( __FILE__ ) . '/inc/social-icon-widget.php';
 
 class Social_Icon_Plugin {
+  const MINIFY = true;
+
   public function __construct() {
     add_filter( 'the_content', [$this, 'add_social_icons' ] );
 
@@ -140,16 +142,12 @@ class Social_Icon_Plugin {
   }
 
   function add_icon_stylesheet_script() {
-    $minify = true;
-
-    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ($minify ? '.min' : '') . '.css' );
-    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ($minify ? '.min' : '') . '.js' );
+    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.css' );
+    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.js' );
   }
 
   function add_icon_defs() {
-    $minify = true;
-
-    require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . ($minify ? '.min' : '') . '.html';
+    require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . (self::MINIFY ? '.min' : '') . '.html';
   }
 }
 

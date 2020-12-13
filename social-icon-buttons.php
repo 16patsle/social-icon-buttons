@@ -14,6 +14,7 @@ declare( strict_types=1 );
 require_once plugin_dir_path( __FILE__ ) . '/inc/social-icon-widget.php';
 
 class Social_Icon_Plugin {
+  const VERSION = '1.3.3';
   const MINIFY = true;
 
   public function __construct() {
@@ -142,8 +143,8 @@ class Social_Icon_Plugin {
   }
 
   function add_icon_stylesheet_script() {
-    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.css' );
-    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.js' );
+    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.css', [], self::VERSION );
+    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.js', [], self::VERSION );
   }
 
   function add_icon_defs() {

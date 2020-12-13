@@ -150,17 +150,17 @@ Actions
 =======
 */
 
-function add_icon_stylesheet() {
+function add_icon_stylesheet_script() {
   $minify = true;
 
-  wp_register_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ($minify ? '.min' : '') . '.css' );
-  wp_enqueue_style( 'social-icon-buttons' );
+  wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ($minify ? '.min' : '') . '.css' );
+  wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ($minify ? '.min' : '') . '.js' );
 }
-add_action( 'wp_enqueue_scripts', 'add_icon_stylesheet' );
+add_action( 'wp_enqueue_scripts', 'add_icon_stylesheet_script' );
 
 function add_icon_defs() {
   $minify = true;
-  
+
   require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . ($minify ? '.min' : '') . '.html';
 }
 add_action( 'wp_body_open', 'add_icon_defs' );

@@ -6,6 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:css": "parcel watch inc/social-icons.css -d inc -o social-icons.min.css --no-hmr --public-url .",
     "build:css": "parcel build inc/social-icons.css -d inc -o social-icons.min.css --public-url .",
+    "dev:js": "parcel watch inc/social-icons.js -d inc -o social-icons.min.js --no-hmr --public-url . --experimental-scope-hoisting",
+    "build:js": "parcel build inc/social-icons.js -d inc -o social-icons.min.js --public-url . --experimental-scope-hoisting",
     "build:html": "parcel build inc/icons.html -d inc -o icons.min.html"
   },
   "repository": {

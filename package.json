@@ -5,7 +5,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev:css": "parcel watch inc/social-icons.css -d inc -o social-icons.min.css --no-hmr",
-    "build:css": "parcel build inc/social-icons.css -d inc -o social-icons.min.css"
+    "build:css": "parcel build inc/social-icons.css -d inc -o social-icons.min.css --public-url ."
   },
   "repository": {
     "type": "git",

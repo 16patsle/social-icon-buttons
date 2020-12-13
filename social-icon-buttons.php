@@ -2,7 +2,7 @@
 /*
 Plugin Name: Social Icon Buttons Plugin
 Description: Social Icon Buttons multitek.no
-Version: 1.3.3
+Version: 1.4.0
 Author: Patrick Sletvold
 Author URI: http://multitek.no
 Requires at least: 4.6
@@ -12,7 +12,7 @@ Text Domain: social-icon-buttons
 declare( strict_types=1 );
 
 class Social_Icon_Plugin {
-  const VERSION = '1.3.3';
+  const VERSION = '1.4.0';
   const MINIFY = true;
 
   public function __construct() {

@@ -129,3 +129,16 @@ body, .social-icons, .social-icons .social-icon-button, .social-icons .social-ic
 .social-icons .print {
   background-color: #62665E;
 }
+
+.social-icons .share {
+  background-color: #DDDDDD;
+  display: none;
+}
+
+.social-icons-share-supported .social-icons .share {
+  display: block;
+}
+
+.social-icons .share svg.social {
+  fill: #535552;
+}

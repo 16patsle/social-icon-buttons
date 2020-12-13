@@ -127,7 +127,7 @@ function add_social_icons( $content ): string {
       <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
       <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
     </button>
-    <button type="button" onclick="navigator.share({title: this.dataset.title, text: this.dataset.text, url: this.dataset.url})" class="social-icon-button share" title="<?php echo esc_html__( 'Share', 'social-icon-buttons' ); ?>" data-title="<?php echo $site_title ?>" data-text="<?php echo $str_page_title . ' - ' . $site_title ?>" data-url="<?php echo $url_current_page ?>">
+    <button type="button" class="social-icon-button share" title="<?php echo esc_html__( 'Share', 'social-icon-buttons' ); ?>" data-title="<?php echo $site_title ?>" data-text="<?php echo $str_page_title . ' - ' . $site_title ?>" data-url="<?php echo $url_current_page ?>">
       <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-share-square"/></svg>
       <span><?php echo esc_html__( 'Share page', 'social-icon-buttons' ); ?></span>
     </button>

@@ -3,7 +3,9 @@
   "version": "1.3.3",
   "description": "WordPress plugin for embedding simple social share buttons with font awesome icons",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:css": "parcel watch inc/social-icons.css --out-dir inc --out-file social-icons.min.css --no-hmr",
+    "build:css": "parcel build inc/social-icons.css --out-dir inc --out-file social-icons.min.css"
   },
   "repository": {
     "type": "git",
@@ -14,5 +16,14 @@
   "bugs": {
     "url": "https://github.com/16patsle/social-icon-buttons/issues"
   },
-  "homepage": "https://github.com/16patsle/social-icon-buttons#readme"
+  "homepage": "https://github.com/16patsle/social-icon-buttons#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "browserslist": [
+    "> 0.25%",
+    "not ie <= 11",
+    "not op_mini all",
+    "not dead"
+  ]
 }

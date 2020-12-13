@@ -11,8 +11,6 @@ Text Domain: social-icon-buttons
 
 declare( strict_types=1 );
 
-require_once plugin_dir_path( __FILE__ ) . '/inc/social-icon-widget.php';
-
 class Social_Icon_Plugin {
   const VERSION = '1.3.3';
   const MINIFY = true;
@@ -22,6 +20,7 @@ class Social_Icon_Plugin {
 
     add_action( 'wp_enqueue_scripts', [ $this, 'add_icon_stylesheet_script' ] );
     add_action( 'wp_body_open', [ $this, 'add_icon_defs' ] );
+    add_action( 'widgets_init', [ $this, 'social_icon_load_widget' ] );
   }
 
   function add_social_icons( $content ): string {
@@ -139,6 +138,12 @@ class Social_Icon_Plugin {
 
   function add_icon_defs() {
     require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . ( self::MINIFY ? '.min' : '' ) . '.html';
+  }
+
+  // Register and load the widget
+  function social_icon_load_widget(): void {
+    require_once plugin_dir_path( __FILE__ ) . '/inc/social-icon-widget.php';
+    register_widget( 'Social_Icon_Widget' );
   }
 }
 

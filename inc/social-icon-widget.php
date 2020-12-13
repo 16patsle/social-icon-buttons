@@ -198,10 +198,4 @@ class Social_Icon_Widget extends WP_Widget {
 
 } // Class wpb_widget ends here
 
-// Register and load the widget
-function social_icon_load_widget(): void {
-  register_widget( 'Social_Icon_Widget' );
-}
-add_action( 'widgets_init', 'social_icon_load_widget' );
-
 ?>

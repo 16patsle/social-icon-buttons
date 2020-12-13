@@ -4,6 +4,7 @@
 
   <file>social-icon-buttons.php</file>
   <file>inc</file>
+  <exclude-pattern>*\.min\.(html|css|js)$</exclude-pattern>
 
   <rule ref="NeutronRuleset">
     <exclude name="Generic.WhiteSpace.DisallowSpaceIndent" />

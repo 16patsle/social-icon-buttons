@@ -42,11 +42,12 @@ function add_social_icons( $content ): string {
 
   $url_current_page = get_permalink( $post->ID );
   $str_page_title = get_the_title( $post->ID );
+  $site_title = get_bloginfo( 'name' );
 
   $share_text = urlencode(
     html_entity_decode(
       $str_page_title
-      . ' - Multitek', ENT_COMPAT, 'UTF-8'
+      . ' - ' . $site_title, ENT_COMPAT, 'UTF-8'
     )
   );
   $email_title = str_replace( '&', '%26', $str_page_title );

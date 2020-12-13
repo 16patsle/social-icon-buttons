@@ -73,7 +73,7 @@ class Social_Icon_Widget extends WP_Widget {
         if ( ! empty( $social['instance'] ) ) {
           ?>
             <a href="<?php echo $social['url'] . $social['instance']; ?>" class="social-icon-button <?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
-              <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon'] ?>"/></svg>
+              <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon']; ?>"/></svg>
               <span><?php echo $social['text']; ?></span>
             </a>
           <?php

@@ -18,10 +18,10 @@ class Social_Icon_Plugin {
   const MINIFY = true;
 
   public function __construct() {
-    add_filter( 'the_content', [$this, 'add_social_icons' ] );
+    add_filter( 'the_content', [ $this, 'add_social_icons' ] );
 
-    add_action( 'wp_enqueue_scripts', [$this, 'add_icon_stylesheet_script'] );
-    add_action( 'wp_body_open', [$this, 'add_icon_defs'] );
+    add_action( 'wp_enqueue_scripts', [ $this, 'add_icon_stylesheet_script' ] );
+    add_action( 'wp_body_open', [ $this, 'add_icon_defs' ] );
   }
 
   function add_social_icons( $content ): string {
@@ -29,20 +29,20 @@ class Social_Icon_Plugin {
     if ( ! is_single() ) {
       return $content;
     }
-  
+
     // TODO: Find a better solution.
     if ( function_exists( 'is_amp_endpoint' ) ) {
       if ( is_amp_endpoint() ) {
         return $content;
       }
     }
-  
+
     global $post;
-  
+
     $url_current_page = get_permalink( $post->ID );
     $str_page_title = get_the_title( $post->ID );
     $site_title = get_bloginfo( 'name' );
-  
+
     $share_text = urlencode(
       html_entity_decode(
         $str_page_title
@@ -51,7 +51,7 @@ class Social_Icon_Plugin {
     );
     $email_title = str_replace( '&', '%26', $str_page_title );
     $email_content = str_replace( '+', '%20', $str_page_title );
-  
+
     if ( has_post_thumbnail() ) {
       // get the featured image
       $url_post_thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' );
@@ -61,10 +61,10 @@ class Social_Icon_Plugin {
       // use the pinterest default
       $url_post_thumb = 'https://cdn.multitek.no/img/multitek-logo/logo_gjennomsiktig_facebook.png';
     }
-  
+
     // Enable output buffering
     ob_start();
-  
+
     $social_media = [
       'facebook' => [
         'url' => 'http://www.facebook.com/sharer.php?u=' . $url_current_page,
@@ -109,14 +109,14 @@ class Social_Icon_Plugin {
         'text' => esc_html__( 'Share using email', 'social-icon-buttons' ),
       ],
     ];
-  
+
     ?>
     <div class="social-icons">
       <?php
       foreach ( $social_media as $name => $social ) {
         ?>
           <a href="<?php echo $social['url']; ?>" class="social-icon-button <?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
-            <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon'] ?>"/></svg>
+            <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon']; ?>"/></svg>
             <span><?php echo $social['text']; ?></span>
           </a>
           <?php
@@ -126,29 +126,29 @@ class Social_Icon_Plugin {
         <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
         <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
       </button>
-      <button type="button" class="social-icon-button share" title="<?php echo esc_html__( 'Share', 'social-icon-buttons' ); ?>" data-title="<?php echo $site_title ?>" data-text="<?php echo $str_page_title . ' - ' . $site_title ?>" data-url="<?php echo $url_current_page ?>">
+      <button type="button" class="social-icon-button share" title="<?php echo esc_html__( 'Share', 'social-icon-buttons' ); ?>" data-title="<?php echo $site_title; ?>" data-text="<?php echo $str_page_title . ' - ' . $site_title; ?>" data-url="<?php echo $url_current_page; ?>">
         <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-share-square"/></svg>
         <span><?php echo esc_html__( 'Share page', 'social-icon-buttons' ); ?></span>
       </button>
     </div>
     <?php
-  
+
     // Get contents and clean buffer
     $share_buttons = ob_get_contents();
     ob_end_clean();
-  
+
     $return_content = $share_buttons . $content . $share_buttons;
-  
+
     return $return_content;
   }
 
   function add_icon_stylesheet_script() {
-    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.css', [], self::VERSION );
-    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . (self::MINIFY ? '.min' : '') . '.js', [], self::VERSION );
+    wp_enqueue_style( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ( self::MINIFY ? '.min' : '' ) . '.css', [], self::VERSION );
+    wp_enqueue_script( 'social-icon-buttons', plugin_dir_url( __FILE__ ) . 'inc/social-icons' . ( self::MINIFY ? '.min' : '' ) . '.js', [], self::VERSION );
   }
 
   function add_icon_defs() {
-    require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . (self::MINIFY ? '.min' : '') . '.html';
+    require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . ( self::MINIFY ? '.min' : '' ) . '.html';
   }
 }
 

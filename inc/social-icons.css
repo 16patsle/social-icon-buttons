@@ -3,6 +3,10 @@ body, .social-icons, .social-icons a, .social-icons a svg {
   padding: 0;
 }
 
+.social-icon-defs {
+  display: none;
+}
+
 .social-icons {
   max-width: 100%;
   display: flex;

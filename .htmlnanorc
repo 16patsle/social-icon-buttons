@@ -6,9 +6,6 @@
       },
       {
         "removeComments": false
-      },
-      {
-        "removeHiddenElems": false
       }
     ]
   },

@@ -1,0 +1,16 @@
+{
+  "minifySvg": {
+    "plugins": [
+      {
+        "cleanupIDs": false
+      },
+      {
+        "removeComments": false
+      },
+      {
+        "removeHiddenElems": false
+      }
+    ]
+  },
+  "removeComments": false
+}

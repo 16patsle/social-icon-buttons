@@ -154,6 +154,8 @@ function add_icon_stylesheet() {
 add_action( 'wp_enqueue_scripts', 'add_icon_stylesheet' );
 
 function add_icon_defs() {
-  require_once plugin_dir_path( __FILE__ ) . '/inc/icons.php';
+  $minify = true;
+  
+  require_once plugin_dir_path( __FILE__ ) . '/inc/icons' . ($minify ? '.min' : '') . '.html';
 }
 add_action( 'wp_body_open', 'add_icon_defs' );

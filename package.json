@@ -4,8 +4,8 @@
   "description": "WordPress plugin for embedding simple social share buttons with font awesome icons",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev:css": "parcel watch inc/social-icons.css --out-dir inc --out-file social-icons.min.css --no-hmr",
-    "build:css": "parcel build inc/social-icons.css --out-dir inc --out-file social-icons.min.css"
+    "dev:css": "parcel watch inc/social-icons.css -d inc -o social-icons.min.css --no-hmr",
+    "build:css": "parcel build inc/social-icons.css -d inc -o social-icons.min.css"
   },
   "repository": {
     "type": "git",

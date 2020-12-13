@@ -72,7 +72,7 @@ class Social_Icon_Widget extends WP_Widget {
       foreach ( $social_media as $name => $social ) {
         if ( ! empty( $social['instance'] ) ) {
           ?>
-            <a href="<?php echo $social['url'] . $social['instance']; ?>" class="<?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
+            <a href="<?php echo $social['url'] . $social['instance']; ?>" class="social-icon-button <?php echo $name; ?>" target="_blank" rel="noopener" title="<?php echo $social['title']; ?>">
               <svg class="social" aria-hidden="true"><use xlink:href="#social-<?php echo $social['icon'] ?>"/></svg>
               <span><?php echo $social['text']; ?></span>
             </a>
@@ -83,10 +83,10 @@ class Social_Icon_Widget extends WP_Widget {
       if ( isset( $instance['print'] ) && ! empty( $instance['print'] ) ) {
         $print = $instance['print'];
         ?>
-        <a href="#" onclick="window.print()" class="print" target="_blank" rel="noopener" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
+        <button type="button" onclick="window.print()" class="social-icon-button print" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
           <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
           <span><?php echo esc_html__( 'Print page', 'social-icon-buttons' ); ?></span>
-        </a>
+        </button>
         <?php
       }
       ?>

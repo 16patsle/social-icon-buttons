@@ -1,4 +1,4 @@
-body, .social-icons, .social-icons a, .social-icons a svg {
+body, .social-icons, .social-icons .social-icon-button, .social-icons .social-icon-button svg {
   margin: 0;
   padding: 0;
 }
@@ -17,7 +17,7 @@ body, .social-icons, .social-icons a, .social-icons a svg {
   align-content: center;
 }
 
-.social-icons a, .social-icons a:visited, .social-icons a:hover {
+.social-icons .social-icon-button, .social-icons .social-icon-button:visited, .social-icons .social-icon-button:hover {
   padding: 12px;
   border-radius: 50%;
   width: 24px;
@@ -35,7 +35,7 @@ body, .social-icons, .social-icons a, .social-icons a svg {
   fill: #fff;
 }
 
-.social-icons a span {
+.social-icons .social-icon-button span {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);

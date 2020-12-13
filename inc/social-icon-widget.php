@@ -18,8 +18,7 @@ class Social_Icon_Widget extends WP_Widget {
   // Creating widget front-end
   // This is where the action happens
   public function widget( $args, $instance ): void {
-    $title = isset( $instance['title'] ) ? $instance['title'] : '';
-    $title = apply_filters( 'widget_title', $title );
+    $title = apply_filters( 'widget_title', isset( $instance['title'] ) ? $instance['title'] : '' );
 
     // before and after widget arguments are defined by themes
     echo $args['before_widget'];
@@ -81,7 +80,6 @@ class Social_Icon_Widget extends WP_Widget {
       }
 
       if ( isset( $instance['print'] ) && ! empty( $instance['print'] ) ) {
-        $print = $instance['print'];
         ?>
         <button type="button" onclick="window.print()" class="social-icon-button print" title="<?php echo esc_html__( 'Print', 'social-icon-buttons' ); ?>">
           <svg class="social" aria-hidden="true"><use xlink:href="#social-fa-print"/></svg>
@@ -94,19 +92,6 @@ class Social_Icon_Widget extends WP_Widget {
     <?php
 
     echo $args['after_widget'];
-    /*
-    $social_icon_buttons = '
-    <div class="social-icons">
-        <a href="#" class="facebook" target="_blank" title="Facebook"><i class="social fa fa-facebook" aria-hidden="true"></i></a>
-        <a href="#" class="twitter" target="_blank" title="Twitter"><i class="social fa fa-twitter" aria-hidden="true"></i></a>
-        <a href="#" class="pinterest" target="_blank" title="Pinterest"><i class="social fa fa-pinterest-p" aria-hidden="true"></i></a>
-        <a href="#" class="reddit" target="_blank" title="Reddit"><i class="social fa fa-reddit-alien" aria-hidden="true"></i></a>
-        <a href="#" class="email" target="_blank" title="Email"><i class="social fa fa-envelope" aria-hidden="true"></i></a>
-        <a href="#" onclick="window.print()" class="print" target="_blank"><i class="social fa fa-print" aria-hidden="true" title="Print"></i></a>
-    </div>
-    ';
-    */
-    //echo $social_icon_buttons;
   }
 
   // Widget Backend

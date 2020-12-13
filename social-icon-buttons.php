@@ -26,15 +26,8 @@ class Social_Icon_Plugin {
 
   function add_social_icons( $content ): string {
     // Don't run the function unless we're on a page it applies to
-    if ( ! is_single() ) {
+    if ( ! is_single() || function_exists( 'is_amp_endpoint' ) && is_amp_endpoint() ) {
       return $content;
-    }
-
-    // TODO: Find a better solution.
-    if ( function_exists( 'is_amp_endpoint' ) ) {
-      if ( is_amp_endpoint() ) {
-        return $content;
-      }
     }
 
     global $post;
@@ -44,10 +37,7 @@ class Social_Icon_Plugin {
     $site_title = get_bloginfo( 'name' );
 
     $share_text = urlencode(
-      html_entity_decode(
-        $str_page_title
-        . ' - ' . $site_title, ENT_COMPAT, 'UTF-8'
-      )
+      html_entity_decode( $str_page_title . ' - ' . $site_title, ENT_COMPAT, 'UTF-8' )
     );
     $email_title = str_replace( '&', '%26', $str_page_title );
     $email_content = str_replace( '+', '%20', $str_page_title );
